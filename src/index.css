@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Poppins", sans-serif;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .container {
+    @apply max-w-[90%] md:max-w-[85%] lg:max-w-[75%] mx-auto;
+  }
+  .input-field {
+    @apply relative mb-8;
+  }
+  .label {
+    @apply absolute left-4 transform -translate-y-1/2 bg-white px-2 text-xs;
+  }
+  .input {
+    @apply h-full w-full border p-6 pb-4 rounded-md outline-none focus:border-black focus:border-opacity-50;
+  }
+  .button {
+    @apply flex gap-2 items-center justify-center bg-black text-white px-5 py-2 rounded-full duration-200 border-2 border-black hover:bg-white hover:text-black cursor-pointer outline-none;
+  }
+  .title {
+    @apply font-bold uppercase;
+  }
+  .img-gallery {
+    @apply flex gap-5 flex-wrap mb-10;
+  }
+  .img {
+    @apply h-[300px] aspect-square;
+  }
 }
